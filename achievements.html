@@ -14,11 +14,16 @@
       height:60px;
       background-color: blue;
       border-radius: 20px;
+      z-index: 99;
     }
     body{
       margin:0;
       padding: 0;
-      background-color: black;
+      background-image: url("images/ac.jpg");
+      background-repeat:repeat-y;
+    background-size:100%;
+    background-color: black;
+    text-shadow: 2px 2px 5px black;
     }
     div{
       margin: 0;
@@ -42,7 +47,7 @@
     color:white;
     border-left:1px solid #990000;
     height:60px;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     list-style:none;
     padding: 0px 20px 0px 25px;
@@ -88,7 +93,7 @@
     to {color: #00FF00;}
 }
     #subhead{
-      color:white;
+      color:#bc8c07;
       font-size: 2.5em;
       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
       font-weight: lighter;
@@ -96,24 +101,15 @@
       padding-left: 30px;
       padding-right: 30px;
       text-align: justify;
+      z-index: 2;
     }
     .end{
        color:gold !important;
       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-      font-size: 3em;
+      font-size: 1em;
       text-align: right;
       float:right;
       padding-right: 10px;
-    }
-    .end:visited{
-      text-decoration: none;
-      color:gold !important;
-      padding-right: 10px;
-    }
-    .end:hover{
-      font-size: 4em;
-      color:gold !important;
-       padding-right: 10px;
     }
     .sticky {
     position: -webkit-sticky;
@@ -124,19 +120,67 @@
       color:red;
       font-size: 1em;
       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-      font-weight: bolder;
+      font-weight: lighter;
       text-decoration: none;
     }
     #x:visited{
       text-decoration:none;
     }
-    #x:hover{
-      text-decoration:none;
-      border-bottom-color: white;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
+  #subhead a {
+  text-decoration: none;
+  position: relative;
+  color: red;
+  } 
+  #subhead a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 5px solid black;
+  transition: 1s;
+  }
+  #subhead a:hover:after {
+    width: 100%;
+  }
+    .end a{
+  text-decoration: none;
+  position: relative;
+  } 
+  .end a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 5px solid black;
+  transition: 1s;
+  }
+  .end a:hover:after {
+    width: 100%;
+  }
 
-    }
+  img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
     </style>
 
 
@@ -160,15 +204,15 @@
 <div id="subhead">
  Well, I don't beleived I have achieved much in life till now. However, I may provide a list of the small milestones that I have crossed so far: <br/><br/>
  <ul align="center">
-    <li>Scored CGPA 10 in 10th Standard CBSE(Secondary School Examination 2016) from <a id="x" href="https://www.southpoint.edu.in/">South Point High School Kolkata</a></li>
-    <li>Scored 84.4% in  12th Standard CBSE(All India Senior School certificate Examination 2018) from <a id="x" href="http://www.dpskolkata.com/ target=_blank">Delhi Public School Ruby Park Kolkata</a></li>
-    <li> Secured 203 marks and an All India Rank(General Category) of 5444 among more than 12 lakh (1.2 million) students in <a id="x" href="https://jeemain.nic.in/ target=_blank">JEE Main(2018)</a></li>
-    <li>Secured 189 Marks and an All India Rank(General Category) of 2157 among 231024 students qualified for the examination in <a id="x" href="https://jeeadv.ac.in/ target=_blank">JEE Advanced(2018)</a></li>
-    <li>Secured 133.58 Marks and an Engineering Rank of 92(General Category) and a Pharmacy Rank of 75 among more than 1 lakh students in <a id="x" href="https://www.wbjeeb.in/" target=_blank>WBJEE (2018)</a></li>
+    <li>Scored CGPA 10 in 10th Standard CBSE(Secondary School Examination 2016) from <a id="x" href="https://www.southpoint.edu.in/" target=_blank>South Point High School Kolkata</a></li>
+    <li>Scored 84.4% in  12th Standard CBSE(All India Senior School certificate Examination 2018) from <a id="x" href="http://www.dpskolkata.com/" target=_blank>Delhi Public School Ruby Park Kolkata</a></li>
+    <li> Secured 203 marks and an All India Rank of 5444 among more than 12 lakh (1.2 million) students in <a id="x" href="https://jeemain.nic.in/" target=_blank>JEE Main(2018)</a></li>
+    <li>Secured 189 Marks and an All India Rank of 2157 among 231024 students qualified for the examination in <a id="x" href="https://jeeadv.ac.in/" target=_blank>JEE Advanced(2018)</a></li>
+    <li>Secured 133.58 Marks and an Engineering Rank of 92 and a Pharmacy Rank of 75 among more than 1 lakh students in <a id="x" href="https://www.wbjeeb.in/" target=_blank>WBJEE (2018)</a></li>
  </ul>
 </div>
 <div class="end">
-  <a href="#top">Back to top</a>
+  <a href="#top" style="font-size: 2em; color:white">Back to top</a>
 </div>
 
 

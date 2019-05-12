@@ -18,7 +18,9 @@
     body{
       margin:0;
       padding: 0;
-      background-color: black;
+      background-image: url("images/backa.jpg");
+      background-repeat:no-repeat;
+    background-size:100%;
     }
     div{
       margin: 0;
@@ -35,7 +37,7 @@
     color:white;
     border-left:1px solid #990000;
     height:60px;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     list-style:none;
     padding: 0px 20px 0px 25px;
@@ -71,19 +73,41 @@
       font-weight: lighter;
       padding-top: 30px;
       animation-name: example;
-      animation-duration: 5s;
+      animation-duration: 2s;
       animation-iteration-count: infinite;
       animation-direction: alternate-reverse;
       text-align: center;
     }
     @keyframes example {
-    from {color:#db3a00;}
+    from {color:black;}
     to {color: #00FF00;}
 }
     #photo{
       border:10px gold groove;
       float:right;
       margin:20px;
+      position: relative;
+      display: inline-block;  
+      /*animation: shake 0.5s;*/
+
+  /* When the animation is finished, start again */
+     /* animation-iteration-count: infinite; */
+    }
+    #photo:hover{
+      border-radius: 30px;
+      border:10px #5528af groove;
+    }
+    #photo .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        float:right;
+    }
+    #photo:hover .img-top {
+        display: inline;
+        float:left;
     }
     #subhead{
       color:white;
@@ -110,14 +134,81 @@
     #x:visited{
       text-decoration:none;
     }
-    #x:hover{
-      text-decoration:none;
-      border-bottom-color: yellow;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
+  #subhead a {
+  text-decoration: none;
+  position: relative;
+  color: #FFFFAF;
+  } 
+  #subhead a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 2px solid gold;
+  transition: 1s;
+  }
+  #subhead a:hover:after {
+    width: 100%;
+  }
 
-    }
-    </style>
+  img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.swing {
+    animation: swing ease-in-out 0.3s infinite alternate;
+    transform-origin: center -20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.swing img {
+    border: 5px solid #f8f8f8;
+    display: block;
+}
+.swing:after{
+    content: '';
+    position: absolute;  
+    border: 20px solid gold;
+    top: -10px; left: 50%;
+    z-index: 0;
+    transform: rotate(45deg);
+}
+/* nail */
+.swing:before{
+    content: '';
+    position: absolute;
+    top: -14px;left: 54%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    z-index: 1;
+}
+ 
+@keyframes swing {
+    0% { transform: rotate(8deg); }
+    100% { transform: rotate(-8deg); }
+}
+
+
+
+
+        </style>
 
 
 
@@ -137,12 +228,12 @@
   <h1 align="center" id="Mainhead">Welcome to Abhijay Mitra's Profile</h1>
 </div>
 <div id="photo">
-   <img src="https://qph.fs.quoracdn.net/main-thumb-149069056-200-pjjlzvhokyiagngfcgcognkdeqkqkvba.jpeg" height ="200"/>
+   <img src="https://qph.fs.quoracdn.net/main-thumb-149069056-200-pjjlzvhokyiagngfcgcognkdeqkqkvba.jpeg" alt="ok1" height ="200"/>
+   <img src="images/abj.jpg" class="img-top" alt="ok2" height ="200"/>
 </div>
 <div id="subhead">
   Well, I am Abhijay Mitra, currently a first year student of Instrumentation Engineering (Electrical Engineering Department) at <a id= "x" href="https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Kharagpur" target=_blank>
-IIT Kharagpur</a>. And you may know more about me from this website.
-</div>
+IIT Kharagpur</a>. And you may know more about me from this website.</div>
 
 </body>
 </html>
